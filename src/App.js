@@ -1,24 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/Home"
+import Proposal from "./pages/Proposal"
+import moralisLogo from "./images/Moralis.png";
+import { ConnectButton } from 'web3uikit';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="header">
+        <h1 style={{color: "#fff", padding: 10, borderRadius: 10, fontWeight: "lighter"}}>DAO PROJECT</h1>
+        <ConnectButton />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/proposal" element={<Proposal />} />
+      </Routes>
+    </>
   );
 }
 
